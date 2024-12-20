@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Crud</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="conteneur">
+      <!---------Le conteneur de tout pour les information------->
+      <header>
+        <!---------Le conteneur d'en tete------->
+        <div class="filtreEntree">
+          <div class="entree">
+            Ligne montrer
+            <select name="" id="taille_Tableau">
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+            </select>
+          </div>
+          <div class="filtre">
+            <label for="recherche">Recherche</label>
+            <input
+              type="search"
+              name=""
+              id="recherche"
+              placeholder="Entrez nom/ville/position"
+            />
+          </div>
+        </div>
+        <div class="ajoutMenbreBtn">
+          <button>Nouveau menbre</button>
+        </div>
+      </header>
+      <!---------Le conteneur tqbleau des informations------->
+      <table class="table_desktop">
+        <thead>
+          <tr class="titre">
+            <th>SR N°</th>
+            <th>Photo</th>
+            <th>Nom complet</th>
+            <th>Age</th>
+            <th>Ville</th>
+            <th>Position</th>
+            <th>Salaire</th>
+            <th>Date de début</th>
+            <th>Email</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <!---------Le conteneur corps du tableau------->
+        <tbody class="userInfo">
+          <!-- <tr>
+            <td class="vide" colspan="11" align="center">
+              Aucune donnée disponible dans le tableau
+            </td>
+          </tr> -->
+          <!-------------- <tr>
+                    <td>1</td>
+                    <td><img src="OIP.jpeg" alt="" width="40px" height="40px"></td>
+                    <td>Mahamane Korobara</td>
+                    <td>22</td>
+                    <td>New York</td>
+                    <td>Développeur Font-End</td>
+                    <td>2500$</td>
+                    <td>03-03-2024</td>
+                    <td>korobaramahamane311@gmail.com</td>
+                    <td>
+                        <button><i class="fa-regular fa-eye"></i></button>
+                        <button><i class="fa-regular fa-pen-to-square"></i></button>
+                        <button><i class="fa-regular fa-trash-can"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td><img src="OIP.jpeg" alt="" width="40px" height="40px"></td>
+                    <td>Mahamane Korobara</td>
+                    <td>22</td>
+                    <td>New York</td>
+                    <td>Développeur Font-End</td>
+                    <td>2500$</td>
+                    <td>03-03-2024</td>
+                    <td>korobaramahamane311@gmail.com</td>
+                    <td>
+                        <button><i class="fa-regular fa-eye"></i></button>
+                        <button><i class="fa-regular fa-pen-to-square"></i></button>
+                        <button><i class="fa-regular fa-trash-can"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td><img src="OIP.jpeg" alt="" width="40px" height="40px"></td>
+                    <td>Mahamane Korobara</td>
+                    <td>22</td>
+                    <td>New York</td>
+                    <td>Développeur Font-End</td>
+                    <td>2500$</td>
+                    <td>03-03-2024</td>
+                    <td>korobaramahamane311@gmail.com</td>
+                    <td>
+                        <button><i class="fa-regular fa-eye"></i></button>
+                        <button><i class="fa-regular fa-pen-to-square"></i></button>
+                        <button><i class="fa-regular fa-trash-can"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td><img src="OIP.jpeg" alt="" width="40px" height="40px"></td>
+                    <td>Mahamane Korobara</td>
+                    <td>22</td>
+                    <td>New York</td>
+                    <td>Développeur Font-End</td>
+                    <td>2500$</td>
+                    <td>03-03-2024</td>
+                    <td>korobaramahamane311@gmail.com</td>
+                    <td>
+                        <button><i class="fa-regular fa-eye"></i></button>
+                        <button><i class="fa-regular fa-pen-to-square"></i></button>
+                        <button><i class="fa-regular fa-trash-can"></i></button>
+                    </td>
+                </tr>---------------->
+        </tbody>
+      </table>
+       <!-- Table visible que sur les petits ecran -->
+      <table class="table_mobile">
+        <thead>
+          <tr class="titre">
+            <th>SR N°</th>
+            <th>Photo</th>
+            <th>Nom complet</th>
+          </tr>
+        </thead>
+        <tbody class="userInfo_mobile">
+          <!-- <tr>
+            <td class="vide" colspan="11" align="center">
+              Aucune donnée disponible dans le tableau
+            </td>
+          </tr>
+          <tr>
+              <td>1</td>
+              <td><img src="OIP.jpeg" alt="" width="40px" height="40px"></td>
+              <td>Mahamane Korobara</td>
+          </tr> -->
+        </tbody>
+      </table>
+      <footer>
+        <!---------Le conteneur footer pour la pagination------->
+        <span class="montreEntree">Affichage de 1 à 10 sur 50 entrées</span>
+        <div class="pagination">
+          <!--------
+          <button>Préc</button>
+          <button class="active">1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>4</button>
+          <button>Suiv</button>
+          ----->
+        </div>
+      </footer>
+    </div>
+
+    <!-----Formulaire-->
+    <div class="dark_bg">
+      <!---------Le conteneur de tout pour le formalaire------->
+      <div class="surgir">
+        <!---------Le conteneur pour l'enregistrement des information------->
+        <header>
+          <h2 class="modelTitre">Remplir le formulaire</h2>
+          <button class="fermeBtn">&times;</button>
+        </header>
+
+        <div class="body">
+          <!---------Le conteneur du formulaire elle meme------->
+          <form action="#" id="myForm">
+            <div class="imgTitulaire">
+              <!---------Le conteneur pour l'enregistrement de l'image------->
+              <label for="telecharger" class="telecharge">
+                <input type="file" name="" id="telecharger" class="photo" />
+                <i class="fa-solid fa-plus"></i>
+              </label>
+              <img src="OIP.jpeg" alt="" width="150" height="150" class="img" />
+            </div>
+
+            <div class="inputChampConteneur">
+              <!---------Le conteneur pour le reste de l'enssemble des inputs------->
+              <div class="nomChamp">
+                <!---------Le conteneur pour les champs nom et prénom------->
+                <div class="form_control">
+                  <label for="fName">Prénom:</label>
+                  <input type="text" name="" id="fName" required />
+                </div>
+
+                <div class="form_control">
+                  <label for="lName">Nom:</label>
+                  <input type="text" name="" id="lName" required />
+                </div>
+              </div>
+
+              <div class="ageVilleChamp">
+                <!---------Le conteneur pour les champs ville et age------->
+                <div class="form_control">
+                  <label for="age">Age:</label>
+                  <input type="number" name="" id="age" required />
+                </div>
+
+                <div class="form_control">
+                  <label for="ville">Ville:</label>
+                  <input type="text" name="" id="ville" required />
+                </div>
+              </div>
+              
+              <div class="positionSalaire">
+                <!---------Le conteneur pour le champs position et salaire------->
+                <div class="form_control">
+                  <label for="position">Position:</label>
+                  <input type="text" name="" id="position" required />
+                </div>
+
+                <div class="form_control">
+                  <label for="salaire">Salaire:</label>
+                  <input type="text" name="" id="salaire" required />
+                </div>
+              </div>
+              <div class="form_control">
+                <!---------Le conteneur pour le champs date------->
+                <label for="date">Date de début:</label>
+                <input type="date" name="" id="date" required />
+              </div>
+              <!---------Le conteneur pour le champs Email------->
+              <div class="form_control">
+                <label for="email">Email:</label>
+                <input type="email" name="" id="email" required />
+              </div>
+            </div>
+          </form>
+        </div>
+        <!---------Le conteneur pied de page------->
+        <footer class="surgirFooter">
+          <button form="myForm" class="submitBtn">Soumettre</button>
+        </footer>
+      </div>
+    </div>
+    <!-- Conteneur reste info -->
+    <div id="detailsMobile">
+      <!-- Les détails de l'employé apparaîtront ici -->
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>

@@ -1,0 +1,755 @@
+/***Declaration des variable de couleur**/
+:root {
+  --dark1: #0000004d; /***Utilisée pour des ombres (box-shadow)**/
+  --dark2: #181c20; /***Utilisée dans le fond de la page**/
+  --dark3: #212529; /***Utilisée pour les arrière-plans de conteneurs**/
+  --dark4: #2d3135; /***Utilisée pour les arrière-plans d'éléments et des champs d'entrée**/
+  --dark5: #424549; /*** Utilisée pour les arrière-plans et survols**/
+  --dark6: #404346; /*** Utilisée pour les bordures et fonds **/
+  --dark7: #9c9c9c; /***Utilisée pour des bordures et états focus **/
+  --dark8: #dae0e7; /***Utilisée comme couleur principale de texte**/
+  --dark9: #262a2e; /*** Utilisée pour des arrière-plans alternatifs et survols**/
+  --red1: #902e31; /***Utilisée pour un dégradé et des survols actifs**/
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*****style du corps****/
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  background: linear-gradient(var(--red1) 50%, var(--dark2) 50%);
+}
+
+/****Le conteneur de tout pour les informations****/
+.conteneur {
+ 
+  padding: 20px;
+  box-shadow: 3px 3px 20px var(--dark1);
+  background: var(--dark3);
+  border-radius: 10px;
+  margin: 10px;
+  margin-top: 50px;
+}
+
+.conteneur header .filtreEntree {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.filtreEntree .entree {
+  color: var(--dark8);
+}
+
+/**Style pour le selct et l'input recherche dans la div filtreEntree***/
+.filtreEntree .entree select,
+.filtreEntree .filtre input {
+  padding: 7px 10px;
+  border: 1px solid var(--dark6);
+  color: var(--dark8);
+  background: var(--dark4);
+  border-radius: 5px;
+  outline: none;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.filtreEntree .entree select {
+  padding: 5px 10px;
+}
+/**Style pour la div filtre***/
+.filtreEntree .filtre {
+  display: flex;
+  align-items: center;
+}
+
+.filtre label {
+  color: var(--dark8);
+  margin-right: 5px;
+}
+
+.filtre input:focus {
+    border-color: var(--dark7);
+}
+
+.conteneur header .ajoutMenbreBtn {
+  margin-bottom: 15px;
+}
+
+/**Style du bouton ajouter un menbre dans le header du conteneur information, le bouton fermer pour du formulaire et
+le bouton soumettre ***/
+header .ajoutMenbreBtn button,
+.surgir header .fermeBtn,
+.surgir footer .submitBtn, #detailsMobile button {
+  padding: 9px 14px;
+  color: var(--dark8);
+  background: transparent; /*****/
+  font-size: 10px;
+  cursor: pointer;
+  pointer-events: auto; /******/
+  outline: none;
+  border: 1px solid var(--dark6);
+  background: var(--dark4);
+  border-radius: 5px;
+}
+
+.ajoutMenbreBtn button:hover {
+  background-color: var(--dark5);
+}
+
+/**Style pour le tableau qui se trouve dans le conteneur information**/
+.conteneur table {
+  border-collapse: collapse;
+  text-align: left;
+}
+
+/**Style du tr qui contienne les teh**/
+table .titre {
+  background: var(--dark5);
+  background: transparent;
+  color: var(--dark8);
+}
+
+table .titre th:hover {
+  background: var(--dark5);
+  transition: 0.3s;
+}
+
+table tr th,
+table tr td {
+  padding: 3px 15px;
+  color: var(--dark8);
+  vertical-align: middle;
+}
+
+table tr th {
+  padding: 12px 15px;
+}
+
+/**Style pour le premier et dernier cellule td de chaque ligne du tableau***/
+table tr td:nth-child(1),
+table tr td:nth-child(2) {
+  text-align: center;
+}
+
+table tr td img{
+  vertical-align: middle;
+}
+
+
+table tr:hover {
+  cursor: pointer;
+  background: var(--dark9);
+}
+
+table tr td {
+  border-bottom: 1px solid var(--dark6);
+}
+
+/**Style pour toute les celule de la première ligne d'un tableau**/
+table tr:first-child td {
+  border-top: 1px solid var(--dark6);
+}
+
+/**Style pour les lignes impaire dans tbody**/
+table tbody tr:nth-child(odd) {
+  background: var(--dark9);
+}
+
+/*** Style pour la 3ème cellule td de chaque ligne impaire dans le tbody**/
+table tbody tr:nth-child(odd) > td:nth-child(3) {
+  background: var(--dark4);
+}
+
+table tr td {
+  font-size: 15px;
+}
+
+/**Style des bouton dans le tableau**/
+table td button{
+  margin: 0px 3px;
+  padding: 5px;
+  background-color: var(--dark5);
+  background: var(--dark5);
+  color: var(--dark8);
+  font-size: 16px;
+  cursor: pointer;
+  pointer-events: auto;
+  outline: none;
+  border: 1px solid var(--dark7);
+}
+
+/**Style de footer dans le conteneur d'information***/
+.conteneur footer {
+  margin-top: 25px;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/**Style du span dans le footer du conteneur d'information***/
+.conteneur footer span {
+  color: var(--dark8);
+}
+
+/*Style du conteneur qui contiennent les boutons dans footer **/
+footer .pagination {
+  display: flex;
+}
+
+/**Style des boutons dans le footer**/
+footer .pagination button {
+  width: 40px;
+  padding: 5px 0;
+  color: var(--dark8);
+  background: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  pointer-events: auto;
+  outline: none;
+  border: 1px solid var(--dark8);
+  border-left: none;
+  margin: 0;
+}
+
+/**Style du premier bouton dans le conteneur pagination qui se trouve dans le footer**/
+.pagination button:first-child {
+  width: 85px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-left: 1px solid var(--dark6);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/**Style du deremier bouton dans le conteneur pagination qui se trouve dans le footer**/
+.pagination button:last-child {
+  width: 85px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/**Style lorsque les bouton son en etat active ou hover dans pagination**/
+.pagination button.active,
+.pagination button:hover {
+  background: var(--red1);
+}
+
+.pagination button.act:first-child {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+.pagination button.act:last-child {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/**Style du conteneur tbody tr lorsque aucune information n'est ajouter**/
+table tr .vide {
+  padding: 10px;
+  background: var(--dark9);
+}
+
+/**Style du conteneur qui contient le conteneur formulaire**/
+.dark_bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  z-index: 999
+}
+
+/**Style du conteneur qui contient div qui est surgir le formulaire **/
+ .surgir {
+  border-radius: 5px;
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.3);
+  background: var(--dark6);
+  transition: 0.4s;
+  user-select: none;
+  transform: scale(0.7);
+  opacity: 0;
+  visibility: hidden;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/**Style du d'en tete de header**/
+.surgir header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--dark7);
+  padding: 10px 20px;
+}
+
+/**style du bouton fermer dans le header**/
+.surgir header .fermeBtn {
+  font-size: 30px;
+  font-weight: 300;
+  padding: 0 15px;
+}
+
+/**Style des deux boutons qui ce trouve dans le conteneur surgir**/
+.surgir header .fermeBtn:hover,
+.surgir footer .submitBtn:hover, #detailsMobile button:hover {
+  border-color: var(--dark7);
+  transition: 0.3s;
+}
+
+/** Style de footer dans le conteneur surgir **/
+.surgir footer {
+  border-top: 1px solid var(--dark7);
+  padding: 12px 20px;
+  text-align: right;
+}
+
+/**Style du formulaire**/
+.surgir form {
+  padding: 10px 20px;
+  display: flex;
+  align-items: flex-start;
+}
+
+/**Style le conteneur pour l'enregistrement de l'image**/
+.surgir .imgTitulaire {
+  width: 150px;
+  height: 150px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  margin-top: 15px;
+  left: -10px;
+}
+
+/**Style du label dans le conteneur pour l'enregistrement de l'image **/
+.surgir .imgTitulaire .telecharge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.3);
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  cursor: pointer;
+  display: none;
+}
+
+.imgTitulaire:hover .telecharge {
+  display: flex;
+}
+
+/**Style de l'input en la mettant en display none son label va remplir sa fonction**/
+.imgTitulaire .telecharge input {
+  display: none;
+}
+
+.imgTitulaire .telecharge {
+  color: white;
+  font-size: 35px;
+  font-weight: 300;
+}
+
+/**Style pour l'image elle meme**/
+.imgTitulaire .img {
+  width: 100%;
+  height: 100%;
+}
+
+/**Style pour tout les grands divs des champs d'entrée dans le formulaire**/
+form .inputChampConteneur .nomChamp,
+form .inputChampConteneur .ageVilleChamp,
+form .inputChampConteneur .positionSalaire {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+/**Style pour tout des champs d'entrée dans le formulaire a part celui du date et email**/
+form .inputChampConteneur .nomChamp input,
+form .inputChampConteneur .ageVilleChamp input,
+form .inputChampConteneur .positionSalaire input {
+  width: 200px;
+}
+
+/**Style pour toute les petites divs **/
+.inputChampConteneur .form_control {
+  margin: 10px 0;
+}
+
+/**Style pour toute les labels des petites divs **/
+.inputChampConteneur .form_control label {
+  display: block;
+  color: var(--dark8);
+  margin-bottom: 5px;
+}
+
+/**Style pour tout des champs d'entrée dans le formulaire**/
+.form_control input {
+  padding: 10px;
+  border: 1px solid var(--dark6);
+  color: var(--dark8);
+  background: var(--dark4);
+  border-radius: 5px;
+  outline: none;
+  transition: 0.3s;
+  width: 100%;
+}
+
+/**Style des champs d'entrée en clique et lorsqu'elle sont valider**/
+.form_control input:focus,
+.form_control input:valid {
+  border-color: var(--dark7);
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  display: none;
+}
+
+/**Style du bouton actif dans la pagination**/
+.active {
+  transform: scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* Table mobile : cachée par défaut */
+.table_mobile {
+  display: none; 
+}
+
+/* Conteneur des détails de l'employé */
+#detailsMobile {
+  position: absolute; 
+  border-radius: 5px; 
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.3);
+  background: var(--dark6); 
+  color: var(--dark8); 
+  transition: 0.4s; 
+  user-select: none; /* Empêche la sélection du texte dans le conteneur */
+  transform: scale(0.9); /* Réduit légèrement l'échelle pour un effet */
+  padding: 20px; 
+  display: none; 
+  cursor: pointer; 
+  width: 100%;
+}
+
+/* Style du titre à l'intérieur de #detailsMobile */
+#detailsMobile h2 {
+  text-align: center; 
+  border-bottom: 1px solid var(--dark7); 
+  padding-bottom: 10px; 
+}
+
+/* Style global des paragraphes à l'intérieur de #detailsMobile */
+#detailsMobile p {
+  font-size: 18px; 
+  border-bottom: 1px solid var(--dark7);
+  padding: 20px 0 20px 10px;
+}
+
+/* Premier paragraphe : ajouter une bordure en haut 
+il y'a un element avant le premier p raison pour laquelle il faut mettre first-of-type au de  first-child */
+#detailsMobile p:first-of-type {
+  border-top: 1px solid var(--dark7);
+}
+
+/* Dernier paragraphe : retirer la bordure en bas */
+#detailsMobile p:last-child {
+  border-bottom: none;
+}
+
+/* Conteneur pour l'image et le nom de l'employé */
+#detailsMobile .img_Nom {
+  position: relative; /* Nécessaire pour positionner le texte par rapport à l'image */
+  margin-top: 20px; 
+  margin-bottom: 20px; 
+}
+
+/* Positionnement du texte (nom et prenom) par rapport à l'image */
+.img_Nom h3 {
+  position: absolute; 
+  left: 120px; 
+  bottom: 40px; 
+}
+
+/* Style de l'image à l'intérieur de #detailsMobile */
+#detailsMobile img {
+  border-radius: 50%;
+}
+
+#detailsMobile button {
+  margin-top: 20px;
+  padding: 20px;
+  font-size: 16px;
+}
+
+
+/* Media Query pour petits écrans (par exemple, moins de 768px) */
+
+@media screen and (max-width: 768px) {
+  .table_desktop {
+      display: none; /* Cacher la table desktop */
+  }
+
+  .table_mobile {
+      display: table; /* Afficher la table mobile */
+      width: 100%;
+
+  }
+
+  /* Ajustements du conteneur principal */
+  .conteneur {
+    width: 95%;
+    padding: 10px;
+    margin-top: 30px;
+  }
+
+  /* Ajustements du header et des filtres */
+  .conteneur header .filtreEntree {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .filtreEntree .entree,
+  .filtreEntree .filtre {
+    width: 100%;
+  }
+
+  .filtreEntree .entree select,
+  .filtreEntree .filtre input {
+    width: 100%;
+    padding: 10px;
+  }
+
+  /* Ajustements du formulaire */
+  .surgir {
+    width: 80%;
+    max-height: 90vh;
+    overflow-y: auto; /*effet de scroll*/
+  }
+
+  /* Ajustements des champs du formulaire */
+  
+  form .inputChampConteneur .nomChamp input,
+  form .inputChampConteneur .ageVilleChamp input,
+  form .inputChampConteneur .positionSalaire input {
+    width: 100%;
+  }
+
+  /* Centrer l'image du titulaire */
+  .surgir .imgTitulaire {
+    margin: 15px auto;
+    left: 0;
+  }
+
+  /* Ajustements de la pagination */
+  .conteneur footer {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .pagination {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .pagination button {
+    padding: 8px 0;
+  }
+
+  /* Ajustements pour #detailsMobile */
+  #detailsMobile {
+    width: 95%;
+    margin: 0 auto;
+    padding: 15px;
+  }
+
+  #detailsMobile .img_Nom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #detailsMobile .img_Nom h3 {
+    position: static;
+    margin-top: 10px;
+  }
+
+  #detailsMobile img {
+    width: 120px;
+    height: 120px;
+  }
+
+  #detailsMobile p {
+    font-size: 16px;
+    padding: 15px 0;
+  }
+
+}
+
+
+@media screen and (max-width: 730px) {
+  /* Ajustements du formulaire popup */
+  .surgir {
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto; /*effet de scroll*/
+    
+  }
+
+  form .inputChampConteneur .nomChamp,
+  form .inputChampConteneur .ageVilleChamp,
+  form .inputChampConteneur .positionSalaire {
+    width: 100%;
+  }
+
+}
+
+ @media screen and (max-width: 650px) {
+  /* Ajustements du formulaire popup */
+  .surgir {
+    width: 98%;
+    max-height: 90vh;
+    overflow-y: auto; /*effet de scroll*/
+  }
+
+  .surgir .imgTitulaire {
+    margin-right: 10px;
+    left: 0;
+  }
+}
+
+
+/* Ajustements pour l'orientation paysage sur mobile */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+
+  .conteneur {
+    overflow-y: auto;
+  }
+  /* Ajuster la hauteur maximale du formulaire*/
+  .surgir {
+    max-height: 100vh; /* Utiliser toute la hauteur disponible */
+    height: 100vh;
+    margin: 0;
+    border-radius: 0; /* Enlever les coins arrondis en mode paysage */
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Fixer le header en haut */
+  .surgir header {
+    position: sticky;
+    top: 0;
+    background: var(--dark6);
+    z-index: 2;
+    padding: 5px 10px;
+  }
+
+  /* Ajuster le contenu du formulaire */
+  .surgir form {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    gap: 10px;
+    margin-left: 30px;
+  }
+
+  /* Réduire la taille de l'image en mode paysage */
+  .surgir .imgTitulaire {
+    width: 100px;
+    height: 100px;
+    margin: 5px 0;
+  }
+
+  /* Optimiser l'espacement des champs */
+  .inputChampConteneur .form_control {
+    margin: 5px 0;
+  }
+
+  .form_control input {
+    padding: 8px;
+  }
+
+  /* Fixer le footer en bas */
+  .surgir footer {
+    position: sticky;
+    bottom: 0;
+    background: var(--dark6);
+    z-index: 2;
+    padding: 5px 10px;    
+  }
+
+  /* Ajuster les boutons */
+  .surgir header .fermeBtn,
+  .surgir footer .submitBtn {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+
+  /* Ajuster l'espacement des groupes de champs */
+  form .inputChampConteneur .nomChamp,
+  form .inputChampConteneur .ageVilleChamp,
+  form .inputChampConteneur .positionSalaire {
+    gap: 8px;
+  }
+}
+
+
+/* Media Queries pour les très petits écrans */
+@media screen and (max-width: 480px) {
+
+  .surgir .imgTitulaire {
+    margin-right: 10px;
+    left: 0;
+    height: 10%;
+  }
+  .surgir header .fermeBtn,
+  .surgir footer .submitBtn {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .conteneur header .ajoutMenbreBtn button {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .pagination button:first-child,
+  .pagination button:last-child {
+    width: 70px;
+  }
+
+  .pagination button {
+    width: 35px;
+  }
+
+  #detailsMobile p {
+    font-size: 14px;
+  }
+}
